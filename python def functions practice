@@ -1,0 +1,63 @@
+#BASIC FUNCION PROBLEM 
+def Percentage():
+    if Percent>50:
+        return "Pased"
+    else:
+        return "Failed"
+
+Percent=int(input())
+Percentage()
+
+
+def Full_Name(fname, lname):
+    print(fname+lname+ " yadav")
+
+Full_Name("Janardhan", " Sanaboina")
+Full_Name("Ram mohan", " Sanaboina")
+Full_Name("Rajesh", " Gorla")
+
+# FUNCTION THROUGH *ARGS & **KWARGS
+def employee(name, salary,*idn, **numbers):
+    print(f"Name:{name}, salary:{salary}")
+    if idn:
+        print("Additional info:",idn)
+    if numbers:
+        print("Personal info:",numbers)
+employee('janardhan','250000','25','35','52',cn=9848762199,en=7894847100)
+
+
+def details(country="india"):
+    print("iam from:",country)
+details("sweden")
+details("indonesia")
+details()
+details("turkey")
+
+
+# MOVING INTO MORE FUNCTION CONCEPT USING POSITION ONLY PARAMETER -"/" & KEYWORD ONLY PARAMETER-"*"
+def add(a,b,/,*,c,d):
+    print(a+b+c+d)
+add(2,5,c=7,d=9)
+
+
+# TRI RECURSION PROBLEMS 
+def tri_recursion(k):
+    if (k>0):
+        result= k + tri_recursion(k-1)
+        print(result)
+    else:
+        result=0
+    return(result)
+tri_recursion(6)
+
+
+def tri_recursion(k):
+  if(k > 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print("Recursion Example Results:")
+tri_recursion(6)
