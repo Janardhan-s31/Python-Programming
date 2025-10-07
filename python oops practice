@@ -1,0 +1,82 @@
+class Student:
+    def __init__(self,name,roll_number,marks):
+        self.name=name
+        self.roll_number=roll_number
+        self.marks= marks
+
+    def average_marks(self):
+        average= sum(self.marks)/len(self.marks)
+        return average
+    def grade (self):
+        average= sum(self.marks)/len(self.marks)
+        if average >40 and average<50:
+            return "F"
+        elif average>50 and average<60:
+            return "D"
+        elif average>60 and average<70:
+            return "C"
+        elif average>70 and average<80:
+            return "B"
+        elif average>80 and average<=100:
+            return "A"
+
+std1=Student("Janardhan","22691A0214",[85,91,65,52,78])
+std2=Student("chandu","22691A0208",[54,56,89,69,75])
+std3=Student("dinesh","22691A0209",[45,56,49,69,98])
+print(f"student1 name:{std1.name}, average:{std1.roll_number}, marks:{std1.marks}")
+print(f"Student1 Average:{std1.average_marks():.2f}")
+print(f"Student1 Grade:{std1.grade()}")
+
+print(f"student2 name:{std2.name}, average:{std2.roll_number}, marks:{std2.marks}")
+print(f"Student2 Average:{std2.average_marks():.2f}")
+print(f"Student2 Grade:{std2.grade()}")
+
+print(f"student3 name:{std3.name}, average:{std3.roll_number}, marks:{std3.marks}")
+print(f"Student3 Average:{std3.average_marks():.2f}")
+print(f"Student3 Grade:{std3.grade()}")
+
+
+#PARENT CLASS AND CHILD CLASS 
+
+class Employee:
+    def __init__(self,name,emp_id,basic_salary):
+        self.name=name
+        self.emp_id=emp_id
+        self.basic_salary=basic_salary
+
+    def display(self):
+        print(f"Employee Name={self.name}")
+        print(f"EmployeeID= {self.emp_id}")
+        print(f"Basic Salary= ${self.basic_salary:.2f}")
+class FullTimeEmployee(Employee):
+    def __init__(self,name,emp_id,basic_salary,hra,da,bonus):
+        super().__init__(name,emp_id,basic_salary)
+        self.hra=hra
+        self.da=da
+        self.bonus=bonus
+
+    def net_salary(self):
+        net_salary=self.basic_salary+self.hra+self.da+self.bonus
+        return self.net_salary
+
+    def display(self):
+        print(f"Employee Name={self.name}")
+        print(f"EmployeeID= {self.emp_id}")
+        print(f"Basic Salary= ${self.basic_salary:.2f}")
+        print(f"HRA= ${self.hra:.2f}")
+        print(f"DA= ${self.da:.2f}")
+        print(f"Bonus= ${self.bonus:.2f}")
+        
+        net_salary=self.basic_salary+self.hra+self.da+self.bonus
+        print(f"Net Salary= ${net_salary:.2f}")
+
+
+#employee details
+emp1=FullTimeEmployee("Janardhan",14,100000,45000,56000,30000)
+emp2=FullTimeEmployee("Chandu",8,95000,40000,50000,28000)
+emp3=FullTimeEmployee("Dinesh",9,50000,20000,15000,5000)
+
+#displaying employee details 
+emp1.display()
+emp2.display()
+emp3.display()
