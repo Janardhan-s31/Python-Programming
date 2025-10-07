@@ -1,0 +1,154 @@
+def prime_numbers(n):
+    for i in range(2,n+1):
+        for j in range(2,int(i**0.5)+1):
+            if i%j==0:
+                break
+        else:
+            print(i,end=" ")
+n=int(input())
+prime_numbers(n)
+
+
+def prime_numbers(n):
+    for i in range(2,n+1):
+        for j in range(2,int(i**0.5)+1):
+            if i%j==0:
+                break
+        else:
+            print(i,end=" ")
+n=int(input())
+prime_numbers(n)
+
+
+def fibonacci_series(n):
+    a,b=0,1
+    for i in range(n):
+        print(a,end=" ")
+        a,b=b,a+b
+fibonacci_series(10)
+
+
+def fibonacci_nthnumber(n):
+    a,b=0,1
+    for i in range(n-1):
+        a,b=b,a+b
+    return a
+
+fibonacci_nthnumber(6)
+
+
+def tribonacci(n):
+    a,b,c=0,0,1
+    for i in range(n):
+        print(a,end=" ")
+        nxt=a+b+c
+        a,b,c=b,c,nxt
+
+n=int(input())
+tribonacci(n)
+
+
+def sum_of_num(num):
+    sum=0
+    while num>0:
+        sum+=num%10
+        num//=10
+    print(sum)
+    
+num=int(input())
+sum_of_num(num)
+
+
+def string_reverse(str):
+    words=str.split()
+    print(" ".join(words[::-1]))
+str=input()
+string_reverse(str)
+
+
+def string_reverse(s):
+    rev=""
+    i=len(s)-1
+    while i>=0:
+        rev+=s[i]
+        i-=1
+    print(rev)
+s=input()
+string_reverse(s)
+
+
+def palindrome1(s1):
+    if s1==s1[::-1]:
+        print("palindrome yes")
+    else:
+        print("palindrome no")
+s1=input().lower()
+palindrome1(s1)
+
+
+s = input().lower()
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+
+def second_highest(L):
+    first=second=-100000
+    for i in L:
+        if i>first:
+            second=first
+            first=i
+        elif i>second and i!=first:
+            second=i
+    print(second)
+L=list(map(int, input().split()))
+second_highest(L)
+
+
+def duplicate_removal(arr):
+    list=[]
+    for i in arr:
+        if i not in list:
+            list.append(i)
+    print(list)
+arr=list(map(int, input().split()))
+duplicate_removal(arr)
+
+
+def common_lists(l1,l2):
+    com=[]
+    for i in l1:
+        for j in l2:
+            if i==j:
+                com.append(i)
+    print(com)
+l1=list(map(int, input().split()))
+l2=list(map(int, input().split()))
+common_lists(l1,l2)
+
+
+def index_find(n):
+    found=-1
+    for i in range(len(lst)):
+        if lst[i]==n:
+            found=i
+    print(found)
+lst=list(map(int, input().split()))
+n=int(input())
+index_find(n)
+
+
+def anagrams_check(str1,str2):
+    if len(str1)!=len(str2):
+        print("strings are not anagrams")
+    else:
+        s1=sorted(str1)
+        s2=sorted(str2)
+        if s1==s2:
+            print("strings are anagrams")
+        else:
+            print("not anagrams")
+str1=input().replace(" ","").lower()
+str2=input().replace(" ","").lower()
+anagrams_check(str1,str2)
